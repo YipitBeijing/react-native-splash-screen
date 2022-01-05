@@ -85,7 +85,11 @@ public class SplashScreen {
                     }
 
                     if (!_activity.isFinishing() && !isDestroyed) {
-                        mSplashDialog.dismiss();
+                        try {
+                            mSplashDialog.dismiss();
+                        } catch(Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                     mSplashDialog = null;
                 }
